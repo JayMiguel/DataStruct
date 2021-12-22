@@ -29,8 +29,8 @@ void R_Balance(AvlBiTree *T)
         switch (Rl->bf)
         {
         case LH:
-            (*T)->bf = RH;
-            R->bf = EH;
+            (*T)->bf = EH;
+            R->bf = RH;
             break;
         case EH:
             (*T)->bf = EH;
@@ -67,7 +67,8 @@ void L_Balance(AvlBiTree *T)
         switch (Lr->bf)
         {
         case LH:
-            (*T)->bf = L->bf = RH;
+            (*T)->bf = RH;
+            L->bf = EH;
             break;
         case EH:
             (*T)->bf = EH;
